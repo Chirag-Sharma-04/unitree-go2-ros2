@@ -54,24 +54,6 @@ sudo apt install ros-humble-velodyne-gazebo-plugins
 sudo apt-get install ros-humble-velodyne-description
 ```
 
-### 1.1 Clone and install all dependencies:
-    
-```bash
-sudo apt install -y python3-rosdep
-rosdep update
-
-cd <your_ws>/src
-git clone https://github.com/anujjain-dev/unitree-go2-ros2.git
-cd <your_ws>
-rosdep install --from-paths src --ignore-src -r -y
-```
-
-### 1.2 Build your workspace:
-```bash
-cd <your_ws>
-colcon build
-. <your_ws>/install/setup.bash
-```
 ## 2. Quick Start
 
 You don't need a physical robot to run the following demos. Make sure you have ros2_control, gazebo ros, controller manager packages installed in your ros2 setup.
