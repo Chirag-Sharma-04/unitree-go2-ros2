@@ -169,7 +169,8 @@
     <joint name="camera_link_joint" type="fixed">
         <parent link="camera_bottom_screw_frame"/>
         <child link="camera_link"/>
-        <origin xyz="0 0.0175 0.0125" rpy="0 0 0"/>
+        <!-- Tilt camera slightly downward so the ground enters the FOV in simulation -->
+        <origin xyz="0 0.0175 0.0125" rpy="0 -0.35 0"/>
     </joint>
 
     <joint name="camera_depth_joint" type="fixed">
@@ -330,8 +331,9 @@
             <depthOpticalframeName>camera_depth_optical_frame</depthOpticalframeName>
             <infrared1OpticalframeName>camera_left_ir_optical_frame</infrared1OpticalframeName>
             <infrared2OpticalframeName>camera_right_ir_optical_frame</infrared2OpticalframeName>
-            <rangeMinDepth>0.3</rangeMinDepth>
-            <rangeMaxDepth>3.0</rangeMaxDepth>
+            <!-- Extend valid depth range to reduce zero-depth frames in empty scenes -->
+            <rangeMinDepth>0.1</rangeMinDepth>
+            <rangeMaxDepth>20.0</rangeMaxDepth>
             <pointCloud>true</pointCloud>
             <pointCloudTopicName>depth/color/points</pointCloudTopicName>
             <pointCloudCutoff>0.3</pointCloudCutoff>
