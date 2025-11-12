@@ -1254,7 +1254,7 @@ Stephen Brawner (brawner@gmail.com)
   <joint name="camera_joint" type="fixed">
     <parent link="base"/>
     <child link="camera_bottom_screw_frame"/>
-    <origin xyz="0.285 0 0.08" rpy="0 0 0"/>
+    <origin xyz="0.285 0 0.08" rpy="0 1.22 0"/>
   </joint>
 
   <joint name="camera_link_joint" type="fixed">

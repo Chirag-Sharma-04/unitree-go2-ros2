@@ -169,8 +169,8 @@
     <joint name="camera_link_joint" type="fixed">
         <parent link="camera_bottom_screw_frame"/>
         <child link="camera_link"/>
-        <!-- Tilt camera slightly downward so the ground enters the FOV in simulation -->
-        <origin xyz="0 0.0175 0.0125" rpy="0 -0.35 0"/>
+        <!-- Camera pointing straight forward -->
+        <origin xyz="0 0.0175 0.0125" rpy="0 0 0"/>
     </joint>
 
     <joint name="camera_depth_joint" type="fixed">
