@@ -9,6 +9,8 @@
     <xacro:include filename="$(find go2_description)/xacro/leg.xacro"/>
     <!-- <xacro:include filename="$(find go2_description)/xacro/stairs.xacro"/> -->
     <xacro:include filename="$(find go2_description)/xacro/gazebo.xacro"/>
+    <!-- Livox LiDAR -->
+    <xacro:include filename="$(find ros2_livox_simulation)/urdf/mid70.xacro"/>
     <!-- <xacro:include filename="$(find go2_gazebo)/launch/stairs.urdf.xacro"/> -->
 
     <!-- <xacro:stairs stairs="15" xpos="0" ypos="0" zpos="0" /> -->
@@ -339,5 +341,10 @@
             <pointCloudCutoff>0.3</pointCloudCutoff>
         </plugin>
     </gazebo>
+
+    <!-- Livox mid70 LiDAR mounted on top of the robot (lightest option - 10K samples) -->
+    <xacro:mid70 name="livox" parent="trunk" topic="/livox/lidar">
+        <origin xyz="0.0 0 0.15" rpy="0 0 0"/>
+    </xacro:mid70>
 
 </robot>
